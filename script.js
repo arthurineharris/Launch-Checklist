@@ -31,13 +31,25 @@ window.addEventListener("load", function() {
                event.preventDefault();
          }
 
-      })
- });            
-         
+      // })
+//  });            
+ 
+ let pilotStatus = document.getElementById("pilotStatus").innerHTML += (`Pilot ${pilotNameInput.value} is ready for launch.`) ;
 
+ let copilotStatus = document.getElementById("copilotStatus").innerHTML += (`Co-pilot ${copilotName.value} is ready for launch.`);
+ 
+ if (fuelLevel.value < 10,000) {
+    let faultyItems = document.getElementById("faultyItems");
+    faultyItems.style.visibility = 'visible';
+
+    let fuelStatus = document.getElementById("fuelStatus").innerHTML += "Fuel level too low for launch.";
+    let launchStatus = document.getElementById("launchStatus").innerHTML += "Shuttle not ready for launch.";
+    h2.setAttribute("launchStatus", "red");
+ }
       
-   
-
+})  
+ 
+});
 // This block of code shows how to format the HTML once you fetch some planetary JSON!
 // <h2>Mission Destination</h2>
 // <ol>
