@@ -22,7 +22,7 @@ window.addEventListener("load", function() {
                alert("Fuel Level must be a number!");
                event.preventDefault();
          }
-      if (!isNaN(pilotNameInput.value ) {
+      if (!isNaN(pilotNameInput.value)) {
                alert("Pilot Name cannot be a number!");
                event.preventDefault();
          }
@@ -49,7 +49,27 @@ window.addEventListener("load", function() {
     document.getElementById("launchStatus").style.color = "red";
     event.preventDefault();
  }
-      
+
+ if (cargoMass.value > 10000) {
+    let faultyItems = document.getElementById("faultyItems");
+    faultyItems.style.visibility = 'visible';
+    event.preventDefault();
+
+    let cargoStatus = document.getElementById("cargoStatus").innerHTML = "Cargo mass too heavy for launch.";
+    let launchStatus = document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch.";
+   
+    document.getElementById("launchStatus").style.color = "red";
+    event.preventDefault();
+ }
+  
+ if (cargoMass.value <= 10000 && fuelLevel.value >= 10000) {
+   let faultyItems = document.getElementById("faultyItems");
+   faultyItems.style.visibility = 'visible';
+
+   let launchStatus = document.getElementById("launchStatus").innerHTML = "Shuttle ready for launch!";
+   document.getElementById("launchStatus").style.color = "green";
+ }
+
 })  
 
 });
