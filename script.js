@@ -64,8 +64,11 @@ window.addEventListener("load", function() {
    if (pilotNameInput.value === "" || copilotName.value === "" || fuelLevel.value === "" ||
    cargoMass.value === "") {
       return false;
+   } else {
+      return true;
    }
- }
+   }
+   
 
  if (cargoMass.value <= 10000 && fuelLevel.value >= 10000 && noEmptyFields()) {
    let faultyItems = document.getElementById("faultyItems");
@@ -73,8 +76,10 @@ window.addEventListener("load", function() {
 
    let launchStatus = document.getElementById("launchStatus").innerHTML = "Shuttle ready for launch!";
    document.getElementById("launchStatus").style.color = "green";
+   event.preventDefault();
  }
 
+})
 })  
 
 fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
@@ -94,7 +99,7 @@ fetch("https://handlers.education.launchcode.org/static/planets.json").then( fun
    })
 })
 
-});
+// });
 
 // This block of code shows how to format the HTML once you fetch some planetary JSON!
 // <h2>Mission Destination</h2>
