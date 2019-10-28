@@ -74,6 +74,9 @@ window.addEventListener("load", function() {
    let faultyItems = document.getElementById("faultyItems");
    faultyItems.style.visibility = 'visible';
 
+   let cargoStatus = document.getElementById("cargoStatus").innerHTML = "Cargo mass low enough for launch.";
+   let fuelStatus = document.getElementById("fuelStatus").innerHTML = "Fuel level high enough for launch.";
+
    let launchStatus = document.getElementById("launchStatus").innerHTML = "Shuttle ready for launch!";
    document.getElementById("launchStatus").style.color = "green";
    event.preventDefault();
